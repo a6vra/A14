@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title> Making a cookie </title>
     <script>
+
         // set the cookie
         function setCookie(cname,cvalue,exdays) {
             const d = new Date();
@@ -27,21 +29,29 @@
             return "";
         }
 
-        // check the cookie 
+        // check the cookie
         function checkCookie() {
-            let user = getCookie("username");
+            let user = getCookie("season");
             if (user != "") {
-                alert("Welcome again " + user);
+                alert("Your favorite season is:  " + user);
             } else {
-                user = prompt("Please enter your name:","");
+                user = prompt("Please enter your favorite season:","");
                 if (user != "" && user != null) {
-                    setCookie("username", user, 30);
+                    setCookie("season", user, 30);
                 }
             }
         }
     </script>
 </head>
 
-<body onload="checkCookie()"></body>
+<body
+        onload="checkCookie()">
+<h3> Instructions </h3>
+<ul>
+    <li> Enter your favorite season </li>
+    <li> Reload the page </li>
+    <li> The page should remember your input </li>
+</ul>
+</body>
 
 </html>
